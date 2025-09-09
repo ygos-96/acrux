@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+"scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/output.css --minify --content \"./dist/**/*.html\""
   },
   "devDependencies": {
-    "vite": "^7.1.2"
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
   }
 }
+
