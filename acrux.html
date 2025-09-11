@@ -3,203 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acrux - Marketing Profissional</title>
+    <title>Acrux - Marketing Digital Profissional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6C0BDF',
+                        'primary-light': '#8A2BE2',
+                        secondary: '#00C2A8',
+                        accent: '#00B4FF',
+                        dark: '#0F0A1A',
+                        light: '#F8F7FC'
+                    },
+                        accent: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(14,165,233,0.1) 100%);
         }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .hover-scale {
+            transition: transform 0.3s ease;
         }
-        
-        .portfolio-item {
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover {
-            transform: scale(1.03);
+        .hover-scale:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-sans text-gray-800 bg-white">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="flex items-center">
-                        <span class="text-2xl font-bold text-indigo-600">ACRUX</span>
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2">
+                        <span class="text-2xl font-display font-bold text-primary-600">ACRUX</span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-indigo-600 font-medium">Home</a>
-                    <a href="#services" class="text-gray-600 hover:text-indigo-600 transition">Serviços</a>
-                    <a href="#portfolio" class="text-gray-600 hover:text-indigo-600 transition">Portfólio</a>
-                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contato</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Início</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Serviços</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Sobre Nós</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Contato</a>
                 </div>
-                <div class="md:hidden">
-                    <button class="mobile-menu-button p-2 focus:outline-none">
-                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                <div class="flex items-center">
+                    <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        Fale Conosco
+                    </a>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu -->
-        <div class="mobile-menu hidden md:hidden bg-white pb-4 px-4">
-            <a href="#" class="block py-2 text-indigo-600 font-medium">Home</a>
-            <a href="#services" class="block py-2 text-gray-600 hover:text-indigo-600 transition">Serviços</a>
-            <a href="#portfolio" class="block py-2 text-gray-600 hover:text-indigo-600 transition">Portfólio</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600 transition">Contato</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero text-white py-20 md:py-32 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Marketing profissional ao alcance do seu negócio</h1>
-            <p class="text-xl mb-8">Soluções digitais personalizadas para pequenos e médios negócios</p>
-            <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
-                Conheça nossos serviços
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nossa História</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipe Acrux" class="rounded-lg shadow-xl w-full">
+    <section class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight mb-6">
+                        Marketing profissional <span class="text-primary-600">acessível</span> para seu negócio
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Desenvolvemos sites rápidos, bonitos e funcionais com a qualidade que seu negócio merece, sem custos extras desnecessários.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors text-center">
+                            Comece agora
+                        </a>
+                        <a href="#services" class="border border-primary-600 text-primary-600 hover:bg-primary-50 px-6 py-3 rounded-lg font-medium transition-colors text-center">
+                            Nossos serviços
+                        </a>
+                    </div>
                 </div>
-                <div class="md:w-1/2">
-                    <p class="text-gray-700 mb-4">
-                        Criada a partir do improvável encontro de quatro profissionais que trabalhavam no marketing de um negócio local, a Acrux nasceu com um propósito claro: oferecer a pequenos e médios negócios um marketing profissional, moderno e acessível.
-                    </p>
-                    <p class="text-gray-700">
-                        Nosso foco é desenvolver sites rápidos, bonitos e funcionais, sem custos extras desnecessários e com a qualidade que todo negócio merece.
-                    </p>
+                <div data-aos="fade-left" class="relative">
+                    <div class="bg-primary-100 rounded-2xl p-2 shadow-lg">
+                        <img src="http://static.photos/technology/1024x576/42" alt="Marketing Digital" class="rounded-xl w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100">
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 p-3 rounded-lg">
+                                <i data-feather="trending-up" class="text-primary-600"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-display font-bold text-gray-900">+87%</p>
+                                <p class="text-sm text-gray-500">Crescimento</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 px-4 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nossos Serviços</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
-                    <div class="text-indigo-600 mb-4">
-                        <i class="fas fa-window-maximize text-4xl"></i>
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Nossos Serviços</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Soluções completas para impulsionar seu negócio no mundo digital
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow hover-scale">
+                    <div class="bg-primary-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="globe" class="text-primary-600 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Landing Page Simples</h3>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>1 página com até 5 seções</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Sobre, Serviços, Localização, Contato</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>WhatsApp linkado</span>
-                        </li>
-                    </ul>
-                    <div class="bg-indigo-50 p-4 rounded-lg">
-                        <p class="text-gray-700"><span class="font-bold">Prazo:</span> até 15 dias</p>
-                        <p class="text-gray-700"><span class="font-bold">Valor:</span> R$ 600 – R$ 900</p>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Sites Profissionais</h3>
+                    <p class="text-gray-600 mb-4">
+                        Desenvolvemos sites rápidos, responsivos e otimizados para conversão, com design moderno e intuitivo.
+                    </p>
+                    <a href="#" class="text-primary-600 font-medium inline-flex items-center">
+                        Saiba mais
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow hover-scale">
+                    <div class="bg-primary-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="bar-chart-2" class="text-primary-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">Marketing Digital</h3>
+                    <p class="text-gray-600 mb-4">
+                        Estratégias personalizadas para aumentar sua presença online e atrair mais clientes para seu negócio.
+                    </p>
+                    <a href="#" class="text-primary-600 font-medium inline-flex items-center">
+                        Saiba mais
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow hover-scale">
+                    <div class="bg-primary-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="shopping-bag" class="text-primary-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-gray-900 mb-3">E-commerce</h3>
+                    <p class="text-gray-600 mb-4">
+                        Lojas virtuais completas com integração de pagamentos, gestão de estoque e experiência de compra otimizada.
+                    </p>
+                    <a href="#" class="text-primary-600 font-medium inline-flex items-center">
+                        Saiba mais
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-display font-bold text-gray-900 mb-6">Nossa História</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Criada a partir do improvável encontro de quatro profissionais que trabalhavam no marketing de um negócio local, a Acrux nasceu com um propósito claro: oferecer a pequenos e médios negócios um marketing profissional, moderno e acessível.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Nosso foco é desenvolver sites rápidos, bonitos e funcionais, sem custos extras desnecessários e com a qualidade que todo negócio merece.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 p-2 rounded-full mr-3">
+                                <i data-feather="check" class="text-primary-600 w-4 h-4"></i>
+                            </div>
+                            <span class="font-medium">Profissionalismo</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 p-2 rounded-full mr-3">
+                                <i data-feather="check" class="text-primary-600 w-4 h-4"></i>
+                            </div>
+                            <span class="font-medium">Modernidade</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary-100 p-2 rounded-full mr-3">
+                                <i data-feather="check" class="text-primary-600 w-4 h-4"></i>
+                            </div>
+                            <span class="font-medium">Acessibilidade</span>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
-                    <div class="text-indigo-600 mb-4">
-                        <i class="fas fa-globe text-4xl"></i>
+                <div data-aos="fade-left" class="grid grid-cols-2 gap-4">
+                    <div class="bg-primary-50 rounded-xl p-6">
+                        <h3 class="text-4xl font-display font-bold text-primary-600 mb-2">4+</h3>
+                        <p class="text-gray-600">Anos de experiência</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Site Completo Institucional</h3>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Até 5 páginas internas</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Home, Sobre, Serviços/Produtos</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Portfólio, Contato</span>
-                        </li>
-                    </ul>
-                    <div class="bg-indigo-50 p-4 rounded-lg">
-                        <p class="text-gray-700"><span class="font-bold">Prazo:</span> 20–30 dias</p>
-                        <p class="text-gray-700"><span class="font-bold">Valor:</span> R$ 1.200 – R$ 2.000</p>
+                    <div class="bg-accent-50 rounded-xl p-6">
+                        <h3 class="text-4xl font-display font-bold text-accent-600 mb-2">50+</h3>
+                        <p class="text-gray-600">Clientes satisfeitos</p>
                     </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300">
-                    <div class="text-indigo-600 mb-4">
-                        <i class="fas fa-star text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Site Premium</h3>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Até 8 páginas</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Blog ou catálogo simples</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Integração básica (WhatsApp, Instagram, Google Maps)</span>
-                        </li>
-                    </ul>
-                    <div class="bg-indigo-50 p-4 rounded-lg">
-                        <p class="text-gray-700"><span class="font-bold">Prazo:</span> 30–45 dias</p>
-                        <p class="text-gray-700"><span class="font-bold">Valor:</span> R$ 2.500 – R$ 3.500</p>
+                    <div class="bg-gray-50 rounded-xl p-6 col-span-2">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex -space-x-2">
+                                <img src="http://static.photos/people/200x200/1" alt="Team member" class="w-10 h-10 rounded-full border-2 border-white">
+                                <img src="http://static.photos/people/200x200/2" alt="Team member" class="w-10 h-10 rounded-full border-2 border-white">
+                                <img src="http://static.photos/people/200x200/3" alt="Team member" class="w-10 h-10 rounded-full border-2 border-white">
+                                <img src="http://static.photos/people/200x200/4" alt="Team member" class="w-10 h-10 rounded-full border-2 border-white">
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-gray-900">Time especializado</h4>
+                                <p class="text-sm text-gray-600">Profissionais qualificados</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nosso Portfólio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Site da Nádia" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">Site da Nádia</h3>
-                        <p class="text-gray-700 mb-4">Landing page profissional para consultora de beleza.</p>
-                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Ver projeto →</a>
+    <!-- Testimonials -->
+    <section class="py-20 bg-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">O que dizem nossos clientes</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A satisfação dos nossos clientes é nossa maior recompensa
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "A Acrux transformou completamente nossa presença online. Nosso site agora é moderno, rápido e já trouxe vários novos clientes. Super recomendo!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/5" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-display font-bold text-gray-900">Ana Silva</h4>
+                            <p class="text-sm text-gray-500">Dona da Boutique Estilo</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Site da Original" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-800">Site da Original</h3>
-                        <p class="text-gray-700 mb-4">Site institucional completo para loja de roupas.</p>
-                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Ver projeto →</a>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Finalmente encontrei uma agência que entende as necessidades de pequenos negócios. O site ficou incrível e o atendimento foi impecável do início ao fim."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/6" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-display font-bold text-gray-900">Carlos Mendes</h4>
+                            <p class="text-sm text-gray-500">Proprietário da Padaria Doce Lar</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,118 +286,116 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 px-4 bg-indigo-600 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Pronto para levar seu negócio para o próximo nível?</h2>
-            <p class="text-xl mb-8">Entre em contato conosco e vamos conversar sobre como podemos ajudar seu negócio a crescer online.</p>
-            <a href="#contact" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
-                Fale conosco
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Entre em Contato</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <form>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"></textarea>
-                        </div>
-                        <div class="md:col-span-2">
-                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                                Enviar Mensagem
-                            </button>
-                        </div>
-                    </div>
-                </form>
+    <section id="contact" class="py-20 bg-primary-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-display font-bold mb-4">Pronto para transformar seu negócio?</h2>
+                <p class="text-lg text-primary-100 max-w-3xl mx-auto">
+                    Entre em contato conosco e vamos conversar sobre como podemos ajudar seu negócio a crescer.
+                </p>
             </div>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-phone-alt text-indigo-600 text-2xl mb-3"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Telefone</h3>
-                    <p class="text-gray-600">(XX) XXXX-XXXX</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-envelope text-indigo-600 text-2xl mb-3"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Email</h3>
-                    <p class="text-gray-600">contato@acrux.com.br</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <i class="fas fa-map-marker-alt text-indigo-600 text-2xl mb-3"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">Endereço</h3>
-                    <p class="text-gray-600">Rua Exemplo, 123 - Cidade/UF</p>
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                <div class="p-8">
+                    <form>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                            Enviar Mensagem
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-2xl font-bold text-indigo-400">ACRUX</span>
-                    <p class="text-gray-400 mt-2">Marketing profissional ao alcance do seu negócio</p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-display font-bold mb-4">ACRUX</h3>
+                    <p class="text-gray-400 mb-4">
+                        Marketing profissional, moderno e acessível para pequenos e médios negócios.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-facebook-f text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                    </a>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sites Profissionais</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Marketing Digital</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-commerce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">SEO</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Portfólio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            contato@acrux.com.br
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            (11) 99999-9999
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            São Paulo, SP
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Acrux Marketing. Todos os direitos reservados.</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Acrux. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            });
-        });
+    </script>
+    <script>
+        feather.replace();
     </script>
 </body>
 </html>

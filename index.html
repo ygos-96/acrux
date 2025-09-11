@@ -1,13 +1,862 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Tailwind</title>
-  <link href="dist/css/output.csspm run " rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acrux — Marketing Gamificado</title>
+    <meta name="description" content="Agência digital gamificada especializada em marketing e performance para PMEs. Experiência única com resultados mensuráveis.">
+    <link rel="canonical" href="https://acrux.com.br">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5200c4',
+                        'primary-light': '#8A2BE2',
+                        secondary: '#00C2A8',
+                        accent: '#00B4FF',
+                        dark: '#121212',
+                        light: '#ffffff'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'pixel': '4px 4px 0px 0px rgba(0,0,0,0.9)',
+                        'pixel-hover': '6px 6px 0px 0px rgba(0,0,0,0.9)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            background-color: #F8F7FC;
+            color: #0F0A1A;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .pixel-border {
+            border: 3px solid #0F0A1A;
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.9);
+            transition: all 0.2s ease;
+        }
+        
+        .pixel-border:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,0.9);
+        }
+        
+        .pixel-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255,255,255,0.3) 0%,
+                rgba(255,255,255,0) 60%
+            );
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .pixel-button:hover::after {
+            left: 100%;
+            top: 100%;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #6C0BDF;
+            transition: width 1s ease-in-out;
+        }
+        
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        .game-card {
+  perspective: 1000px;
+}
+
+.game-card-inner {
+  position: relative;       /* importante */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.game-card:hover .game-card-inner {
+  transform: rotateY(180deg);
+}
+
+.game-card-front, .game-card-back {
+  position: absolute;       /* empilha */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* esconde o verso */
+}
+
+.game-card-back {
+  transform: rotateY(180deg);
+}
+        
+        @keyframes pixelGlow {
+            0% { box-shadow: 0 0 5px #6C0BDF; }
+            50% { box-shadow: 0 0 20px #8A2BE2; }
+            100% { box-shadow: 0 0 5px #6C0BDF; }
+        }
+        
+        .pixel-glow {
+            animation: pixelGlow 2s infinite;
+        }
+        
+        .level-indicator {
+            position: relative;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .level-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(#6C0BDF var(--progress), #E5E7EB 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .level-number {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            background-color: #F8F7FC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0F0A1A;
+            border: 3px solid #0F0A1A;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <h1 class="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
+<body class="bg-light text-dark font-sans">
+    <!-- Pixel Art Navigation -->
+    <header class="sticky top-0 z-50 bg-light/90 backdrop-blur-md border-b-2 border-dark shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-20 h-12 rounded-md bg-primary pixel-border flex items-center justify-center mr-3">
+                           <img src="dist/img/logo-acrux-branco-roxo.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
+                        <span class="mr-1">01.</span> Sobre
+                    </a>
+                    <a href="#services" class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
+                        <span class="mr-1">02.</span> Serviços
+                    </a>
+                    <a href="#portfolio" class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
+                        <span class="mr-1">03.</span> Portfólio
+                    </a>
+                    <a href="#testimonials" class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
+                        <span class="mr-1">04.</span> Depoimentos
+                    </a>
+                    <a href="#contact" class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
+                        <span class="mr-1">05.</span> Contato
+                    </a>
+                </nav>
+                
+                <button class="px-6 py-3 bg-primary text-white font-bold uppercase text-xs tracking-wider pixel-border pixel-button hover:bg-primary-light transition-colors hidden md:block">
+                 chamar no whats
+                </button>
+                
+                <button class="md:hidden">
+                    <i data-feather="menu" class="w-6 h-6 text-dark"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Game UI -->
+    <section class="relative overflow-hidden" id="hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase">
+                  Marketing <span class="text-primary-light">profissional</span> ao alcance do seu negócio</h1>
+                <p class="text-lg md:text-xl text-dark mb-8">
+                    Foco em desenvolver sites rápidos, bonitos e funcionais, sem custos extras desnecessários e com a qualidade que todo negócio merece.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider pixel-border pixel-button hover:bg-primary-light transition-colors">
+                        Entre em contato
+                    </button>
+                    <button class="px-8 py-4 bg-transparent border-2 border-dark text-dark font-bold uppercase tracking-wider hover:bg-dark hover:text-light transition-colors">
+                        Nossos Serviços
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div data-aos="fade-left" class="relative">
+                <div class="pixel-border bg-primary/80 p-4 rounded-lg">
+                    <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-xl border-2 border-white/20 p-8" data-aos="fade-up" data-aos-delay="200">
+<h2 class="text-light italic my-3">Nos mande um email se preferir explicando sua demanda e responderemos em breve</h2>                        
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-dark">
+                            <div>
+                                <label for="name" class="block text-left text-white mb-2 font-bold">Nome Completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-left text-white mb-2 font-bold">Telefone</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div>
+                                <label for="business" class="block text-left text-white mb-2 font-bold">Negócio</label>
+                                <input type="text" id="business" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div>
+                                <label for="goal" class="block text-left text-white mb-2 font-bold">Objetivo</label>
+                                <select id="goal" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                    <option class="bg-dark">Landing Page Simples</option>
+                                    <option class="bg-dark">Site Completo Institucional</option>
+                                    <option class="bg-dark">Site Premium</option>
+                                    <option class="bg-dark">Pacote de videos</option>
+                                    <option class="bg-dark">Outro</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit" class="w-full px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider rounded-lg border-2 border-white hover:bg-white/90 transition-colors">
+                                    Enviar 
+                                </button>
+                            </div>
+                        </form>
+                        
+                     
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full border-2 border-dark shadow-lg">
+                    <div class="level-indicator">
+                        <div class="level-circle" style="--progress: 65%">
+                            <div class="level-number">5</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-sm absolute -top-4 -left-4 bg-accent text-white px-3 py-1 rounded-md border-2 border-dark font-bold uppercase">
+                   fale conosco
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary-light rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- About Section with Game Characters -->
+    <section class="py-20 bg-white" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
+                    <span class="text-primary">//</span> nossa equipe <span class="text-primary">//</span>
+                </h2>
+                <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Conheça os profissionais que vão te ajudar nessa jornada épica de marketing digital
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+                <!-- Character 1 -->
+                <div class="skill-card bg-light p-6 rounded-lg border-2 border-dark text-center h-full flex flex-col" data-aos="fade-up">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-dark">
+                        <img src="http://static.photos/people/320x240/55" alt="Estrategista" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-md font-bold mb-2 uppercase">Gestor de Trafego</h3>
+                    <div class="flex justify-center mb-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                    </div>
+                    <p class="text-dark mb-4 flex-grow">
+                        Mestre em planejamento de campanhas e análise de dados. Especialista em definir KPIs e métricas de sucesso.
+                    </p>
+                    <div class="flex justify-center space-x-2 mt-auto">
+                        <span class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded">SEO</span>
+                        <span class="px-2 py-1 bg-accent text-white text-xs font-bold rounded">ANÁLISE</span>
+                    </div>
+                </div>
+
+                <div class="skill-card bg-light p-6 rounded-lg border-2 border-dark text-center h-full flex flex-col" data-aos="fade-up">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-dark">
+                        <img src="http://static.photos/people/320x240/1" alt="Estrategista" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-md font-bold mb-2 uppercase">Especialista em edição</h3>
+                    <div class="flex justify-center mb-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                    </div>
+                    <p class="text-dark mb-4 flex-grow">
+                        Criadora de interfaces encantadoras e identidades visuais marcantes. Transforma conceitos em experiências visuais memoráveis.
+                    </p>
+                    <div class="flex justify-center space-x-2 mt-auto">
+                        <span class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded uppercase">3D</span>
+                        <span class="px-2 py-1 bg-accent text-white text-xs font-bold rounded uppercase">efeitos visuais</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card bg-light p-6 rounded-lg border-2 border-dark text-center h-full flex flex-col" data-aos="fade-up">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-dark">
+                        <img src="http://static.photos/people/320x240/10" alt="Estrategista" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-md font-bold mb-2 uppercase">desenvolvedor</h3>
+                    <div class="flex justify-center mb-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                    </div>
+                    <p class="text-dark mb-4 flex-grow">
+                        Mago do código que transforma designs em sites ultrarrápidos e funcionais. Especialista em performance e tecnologia.
+                    </p>
+                    <div class="flex justify-center space-x-2 mt-auto">
+                        <span class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded uppercase">ui/ux</span>
+                        <span class="px-2 py-1 bg-accent text-white text-xs font-bold rounded uppercase">web</span>
+                    </div>
+                </div>
+
+                <div class="skill-card bg-light p-6 rounded-lg border-2 border-dark text-center h-full flex flex-col" data-aos="fade-up">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-dark">
+                        <img src="http://static.photos/people/320x240/10" alt="Estrategista" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-md font-bold mb-2 uppercase">especialista em imagens</h3>
+                    <div class="flex justify-center mb-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
+                    </div>
+                    <p class="text-dark mb-4 flex-grow">
+                        Especialista em escalar negócios através de campanhas de performance. Domina Google Ads, Meta Ads e otimização.
+                    </p>
+                    <div class="flex justify-center space-x-2 mt-auto">
+                        <span class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded uppercase">adobe</span>
+                        <span class="px-2 py-1 bg-accent text-white text-xs font-bold rounded uppercase">efeitos visuais</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Services Section with Game Mechanics -->
+    <section class="py-20 bg-light" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
+                    <span class="text-primary">//</span> Planos <span class="text-primary">//</span>
+                </h2>
+                <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Complete missões para desbloquear conquistas e melhorar seu marketing
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mission 1 -->
+                <div class="game-card h-96" data-aos="fade-up">
+                    <div class="game-card-inner h-full w-full">
+                        <div class="game-card-front h-full w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
+                            <div class="w-16 h-16 bg-primary-light rounded-lg border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">MISSÃO SITE</h3>
+                            <p class="text-dark flex-grow">
+                                Desenvolva um site rápido, bonito e funcional para aumentar suas conversões.
+                            </p>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 bg-primary-light/10 text-primary text-xs font-bold rounded-full border border-primary-light">DIFICULDADE: MÉDIA</span>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-sm font-bold">XP: 250</span>
+                                <button class="text-primary font-bold flex items-center">
+                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-card-back h-full w-full bg-primary p-6 rounded-lg border-2 border-dark flex flex-col items-center justify-center text-center text-white">
+                            <h3 class="text-xl font-bold mb-3">RECOMPENSA</h3>
+                            <p class="mb-4">
+                                Desbloqueie o troféu "Site Master" e ganhe +15% de velocidade de carregamento em todos seus projetos.
+                            </p>
+                            <div class="w-20 h-20 bg-white rounded-full border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="award" class="w-10 h-10 text-primary"></i>
+                            </div>
+                            <span class="text-xs font-bold">CONQUISTA DESBLOQUEADA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mission 2 -->
+                <div class="game-card h-96" data-aos="fade-up" data-aos-delay="100">
+                    <div class="game-card-inner h-full w-full">
+                        <div class="game-card-front h-full w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
+                            <div class="w-16 h-16 bg-accent rounded-lg border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="bar-chart-2" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">MISSÃO ADS</h3>
+                            <p class="text-dark flex-grow">
+                                Lance campanhas de performance com ROI positivo em até 30 dias.
+                            </p>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full border border-accent">DIFICULDADE: ALTA</span>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-sm font-bold">XP: 400</span>
+                                <button class="text-primary font-bold flex items-center">
+                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-card-back h-full w-full bg-accent p-6 rounded-lg border-2 border-dark flex flex-col items-center justify-center text-center text-white">
+                            <h3 class="text-xl font-bold mb-3">RECOMPENSA</h3>
+                            <p class="mb-4">
+                                Desbloqueie o troféu "Ads Ninja" e ganhe +10% de desconto em todas suas campanhas por 3 meses.
+                            </p>
+                            <div class="w-20 h-20 bg-white rounded-full border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="award" class="w-10 h-10 text-accent"></i>
+                            </div>
+                            <span class="text-xs font-bold">CONQUISTA DESBLOQUEADA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mission 3 -->
+                <div class="game-card h-96" data-aos="fade-up" data-aos-delay="200">
+                    <div class="game-card-inner h-full w-full">
+                        <div class="game-card-front h-full w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
+                            <div class="w-16 h-16 bg-primary rounded-lg border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="trending-up" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">MISSÃO SEO</h3>
+                            <p class="text-dark flex-grow">
+                                Alcance o top 3 no Google para 5 palavras-chave estratégicas em 6 meses.
+                            </p>
+                            <div class="mt-4">
+                                <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary">DIFICULDADE: ALTA</span>
+                            </div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-sm font-bold">XP: 500</span>
+                                <button class="text-primary font-bold flex items-center">
+                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-card-back h-full w-full bg-primary p-6 rounded-lg border-2 border-dark flex flex-col items-center justify-center text-center text-white">
+                            <h3 class="text-xl font-bold mb-3">RECOMPENSA</h3>
+                            <p class="mb-4">
+                                Desbloqueie o troféu "SEO Master" e ganhe tráfego orgânico garantido por 1 ano.
+                            </p>
+                            <div class="w-20 h-20 bg-white rounded-full border-2 border-dark flex items-center justify-center mb-4">
+                                <i data-feather="award" class="w-10 h-10 text-primary"></i>
+                            </div>
+                            <span class="text-xs font-bold">CONQUISTA DESBLOQUEADA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Leaderboard -->
+    <section class="py-20 bg-white" id="portfolio">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Press Start 2P', cursive;" data-aos="fade-up">
+                    <span class="text-primary">//</span> LEADERBOARD <span class="text-primary">//</span>
+                </h2>
+                <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Veja os melhores jogadores e seus resultados impressionantes
+                </p>
+            </div>
+            
+            <div class="bg-light rounded-lg border-2 border-dark overflow-hidden" data-aos="fade-up">
+                <div class="grid grid-cols-12 bg-dark text-white p-4 font-bold uppercase text-xs">
+                    <div class="col-span-1">#</div>
+                    <div class="col-span-4">Jogador</div>
+                    <div class="col-span-3">Missão</div>
+                    <div class="col-span-2">XP</div>
+                    <div class="col-span-2">Nível</div>
+                </div>
+                
+                <div class="divide-y divide-dark/20">
+                    <!-- Player 1 -->
+                    <div class="grid grid-cols-12 items-center p-4 hover:bg-light/50 transition-colors">
+                        <div class="col-span-1 font-bold text-primary">1</div>
+                        <div class="col-span-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-dark mr-3">
+                                <img src="http://static.photos/people/200x200/5" alt="Player 1" class="w-full h-full object-cover">
+                            </div>
+                            <span>Loja de Moda</span>
+                        </div>
+                        <div class="col-span-3">Site + SEO</div>
+                        <div class="col-span-2 font-bold">1,250 XP</div>
+                        <div class="col-span-2">
+                            <div class="level-indicator mx-auto" style="width: 40px; height: 40px;">
+                                <div class="level-circle" style="--progress: 85%">
+                                    <div class="level-number text-xs">7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player 2 -->
+                    <div class="grid grid-cols-12 items-center p-4 hover:bg-light/50 transition-colors">
+                        <div class="col-span-1 font-bold text-accent">2</div>
+                        <div class="col-span-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-dark mr-3">
+                                <img src="http://static.photos/people/200x200/6" alt="Player 2" class="w-full h-full object-cover">
+                            </div>
+                            <span>Restaurante</span>
+                        </div>
+                        <div class="col-span-3">Redesign Completo</div>
+                        <div class="col-span-2 font-bold">1,100 XP</div>
+                        <div class="col-span-2">
+                            <div class="level-indicator mx-auto" style="width: 40px; height: 40px;">
+                                <div class="level-circle" style="--progress: 70%">
+                                    <div class="level-number text-xs">6</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player 3 -->
+                    <div class="grid grid-cols-12 items-center p-4 hover:bg-light/50 transition-colors">
+                        <div class="col-span-1 font-bold text-secondary">3</div>
+                        <div class="col-span-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-dark mr-3">
+                                <img src="http://static.photos/people/200x200/7" alt="Player 3" class="w-full h-full object-cover">
+                            </div>
+                            <span>Clínica Médica</span>
+                        </div>
+                        <div class="col-span-3">Campanha de Leads</div>
+                        <div class="col-span-2 font-bold">950 XP</div>
+                        <div class="col-span-2">
+                            <div class="level-indicator mx-auto" style="width: 40px; height: 40px;">
+                                <div class="level-circle" style="--progress: 50%">
+                                    <div class="level-number text-xs">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player 4 -->
+                    <div class="grid grid-cols-12 items-center p-4 hover:bg-light/50 transition-colors">
+                        <div class="col-span-1 font-bold">4</div>
+                        <div class="col-span-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-dark mr-3">
+                                <img src="http://static.photos/people/200x200/8" alt="Player 4" class="w-full h-full object-cover">
+                            </div>
+                            <span>Escritório</span>
+                        </div>
+                        <div class="col-span-3">Identidade Visual</div>
+                        <div class="col-span-2 font-bold">800 XP</div>
+                        <div class="col-span-2">
+                            <div class="level-indicator mx-auto" style="width: 40px; height: 40px;">
+                                <div class="level-circle" style="--progress: 30%">
+                                    <div class="level-number text-xs">4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="px-8 py-4 bg-dark text-white font-bold uppercase tracking-wider pixel-border pixel-button hover:bg-dark/90 transition-colors">
+                    Ver Todos os Jogadores
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Achievements -->
+    <section class="py-20 bg-light" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Press Start 2P', cursive;" data-aos="fade-up">
+                    <span class="text-primary">//</span> CONQUISTAS <span class="text-primary">//</span>
+                </h2>
+                <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    O que nossos jogadores estão dizendo sobre a experiência
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
+                            <img src="http://static.photos/people/200x200/9" alt="Cliente 1" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Silva</h4>
+                            <p class="text-sm text-dark/70">Nível 7 - Site Master</p>
+                        </div>
+                    </div>
+                    <p class="text-dark mb-6">
+                        "A gamificação tornou todo o processo de desenvolvimento do nosso site muito mais engajador. Conseguimos resultados incríveis enquanto nos divertíamos!"
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">+60% VENDAS</span>
+                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">3 CONQUISTAS</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
+                            <img src="http://static.photos/people/200x200/10" alt="Cliente 2" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Paula</h4>
+                            <p class="text-sm text-dark/70">Nível 5 - Ads Ninja</p>
+                        </div>
+                    </div>
+                    <p class="text-dark mb-6">
+                        "Nunca imaginei que marketing pudesse ser tão divertido! As missões me mantiveram motivada e os resultados superaram todas as expectativas."
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">-30% CPA</span>
+                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">5 MISSÕES</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
+                            <img src="http://static.photos/people/200x200/11" alt="Cliente 3" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Roberto Almeida</h4>
+                            <p class="text-sm text-dark/70">Nível 6 - Growth Hacker</p>
+                        </div>
+                    </div>
+                    <p class="text-dark mb-6">
+                        "A competição saudável no leaderboard me fez ir além. Em 3 meses já estávamos no topo do ranking e com os melhores resultados da nossa história!"
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">+120% LEADS</span>
+                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">TOP 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section with Level Up -->
+    <section class="py-20 bg-primary text-white" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Press Start 2P', cursive;" data-aos="fade-up">
+                PRONTO PARA O PRÓXIMO NÍVEL?
+            </h2>
+            <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90" data-aos="fade-up" data-aos-delay="100">
+                Comece sua jornada de marketing gamificado hoje e transforme seus resultados enquanto se diverte!
+            </p>
+            
+            <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-xl border-2 border-white/20 p-8" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-bold mb-6">CRIAR CONTA</h3>
+                
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-dark">
+                    <div>
+                        <label for="name" class="block text-left text-white mb-2 font-bold">Nome Completo</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-white mb-2 font-bold">E-mail</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                    </div>
+                    <div>
+                        <label for="business" class="block text-left text-white mb-2 font-bold">Negócio</label>
+                        <input type="text" id="business" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                    </div>
+                    <div>
+                        <label for="goal" class="block text-left text-white mb-2 font-bold">Objetivo</label>
+                        <select id="goal" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <option class="bg-dark">Site Novo</option>
+                            <option class="bg-dark">Mais Vendas</option>
+                            <option class="bg-dark">Mais Visibilidade</option>
+                            <option class="bg-dark">Outro</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider rounded-lg border-2 border-white hover:bg-white/90 transition-colors">
+                            Começar Jornada
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-8 flex items-center justify-center space-x-4">
+                    <span class="h-px flex-1 bg-white/30"></span>
+                    <span class="text-white/80">OU</span>
+                    <span class="h-px flex-1 bg-white/30"></span>
+                </div>
+                
+                <div class="mt-8">
+                    <button class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center mx-auto">
+                        <i data-feather="discord" class="w-5 h-5 mr-2"></i> Entrar no Discord
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-md bg-primary border-2 border-white flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xs">ACRUX</span>
+                        </div>
+                        <span class="font-bold text-xl" style="font-family: 'Press Start 2P', cursive;">ACRUX</span>
+                    </div>
+                    <p class="text-white/70 mb-6">
+                        Marketing gamificado para PMEs que querem resultados reais enquanto se divertem.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">
+                            <i data-feather="discord"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-6 uppercase">Missões</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Desenvolvimento de Sites</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Performance Ads</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">SEO & Conteúdo</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Identidade Visual</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-6 uppercase">Jornada</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Leaderboard</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Conquistas</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Missões</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Recompensas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-6 uppercase">Contato</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2 text-white/70"></i>
+                            <span class="text-white/70">contato@acrux.com.br</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2 text-white/70"></i>
+                            <span class="text-white/70">(11) 99999-9999</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2 text-white/70"></i>
+                            <span class="text-white/70">São Paulo, SP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/50 text-sm mb-4 md:mb-0">
+                    © 2023 Acrux Marketing Gamificado. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">Termos</a>
+                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">Privacidade</a>
+                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        feather.replace();
+        
+        // Animate progress bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            const animateProgressBars = () => {
+                progressBars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-width') || '75%';
+                    bar.style.width = targetWidth;
+                });
+            };
+            
+            // Run once on page load
+            animateProgressBars();
+            
+            // Or use IntersectionObserver to animate when scrolled into view
+        });
+    </script>
 </body>
 </html>
-
