@@ -11,36 +11,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#5200c4',
-                        'primary-light': '#8A2BE2',
-                        secondary: '#00C2A8',
-                        accent: '#00B4FF',
-                        dark: '#121212',
-                        light: '#ffffff'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'pixel': '4px 4px 0px 0px rgba(0,0,0,0.9)',
-                        'pixel-hover': '6px 6px 0px 0px rgba(0,0,0,0.9)'
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link rel="stylesheet" href="dist/css/output.css">
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         body {
             background-color: #F8F7FC;
             color: #0F0A1A;
@@ -202,11 +179,11 @@
                 </div>
 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#about"
+                    <a href="#sobrenos"
                         class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
                         <span class="mr-1">01.</span> Sobre
                     </a>
-                    <a href="#services"
+                    <a href="#planos"
                         class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
                         <span class="mr-1">02.</span> Serviços
                     </a>
@@ -214,11 +191,11 @@
                         class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
                         <span class="mr-1">03.</span> Portfólio
                     </a>
-                    <a href="#testimonials"
+                    <a href="#depoimentos"
                         class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
                         <span class="mr-1">04.</span> Depoimentos
                     </a>
-                    <a href="#contact"
+                    <a href="#contato"
                         class="text-dark hover:text-primary font-bold uppercase text-sm tracking-wider transition-colors flex items-center">
                         <span class="mr-1">05.</span> Contato
                     </a>
@@ -306,14 +283,6 @@
                     </div>
                 </div>
 
-                <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full border-2 border-dark shadow-lg">
-                    <div class="level-indicator">
-                        <div class="level-circle" style="--progress: 65%">
-                            <div class="level-number">5</div>
-                        </div>
-                    </div>
-                </div>
-
                 <div
                     class="text-sm absolute -top-4 -left-4 bg-accent text-white px-3 py-1 rounded-md border-2 border-dark font-bold uppercase">
                     fale conosco
@@ -326,8 +295,11 @@
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full filter blur-3xl opacity-20 -z-10"></div>
     </section>
 
+    <section class="flex justify-center items-center">
+        sessão de sobre nos aqui
+    </section>
     <!-- About Section with Game Characters -->
-    <section class="py-20 bg-white" id="about">
+    <section class="py-20 bg-white" id="nossaequipe">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
@@ -355,8 +327,8 @@
                         <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
                     </div>
                     <p class="text-dark mb-4 flex-grow">
-                        Mestre em planejamento de campanhas e análise de dados. Especialista em definir KPIs e métricas
-                        de sucesso.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae fugiat numquam fuga ducimus
+                        quos doloremque magnam dolores error nostrum blanditiis!
                     </p>
                     <div class="flex justify-center space-x-2 mt-auto">
                         <span class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded">SEO</span>
@@ -379,9 +351,8 @@
                         <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
                     </div>
                     <p class="text-dark mb-4 flex-grow">
-                        Criadora de interfaces encantadoras e identidades visuais marcantes. Transforma conceitos em
-                        experiências visuais memoráveis.
-                    </p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni recusandae ipsa similique velit
+                        nesciunt quibusdam ipsam mollitia, explicabo expedita ex?
                     <div class="flex justify-center space-x-2 mt-auto">
                         <span
                             class="px-2 py-1 bg-primary-light text-white text-xs font-bold rounded uppercase">3D</span>
@@ -405,8 +376,8 @@
                         <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
                     </div>
                     <p class="text-dark mb-4 flex-grow">
-                        Mago do código que transforma designs em sites ultrarrápidos e funcionais. Especialista em
-                        performance e tecnologia.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, perferendis esse? Vitae
+                        molestiae non, deserunt quos fuga aliquam similique amet.
                     </p>
                     <div class="flex justify-center space-x-2 mt-auto">
                         <span
@@ -430,8 +401,8 @@
                         <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400 mx-0.5"></i>
                     </div>
                     <p class="text-dark mb-4 flex-grow">
-                        Especialista em escalar negócios através de campanhas de performance. Domina Google Ads, Meta
-                        Ads e otimização.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, porro temporibus. Ipsa autem
+                        rerum saepe eaque odio consequatur praesentium voluptatem!
                     </p>
                     <div class="flex justify-center space-x-2 mt-auto">
                         <span
@@ -446,7 +417,7 @@
     </section>
 
     <!-- Services Section with Game Mechanics -->
-    <section class="py-20 bg-light" id="services">
+    <section class="py-20 bg-light" id="planos">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
@@ -480,24 +451,24 @@
                             </div>
                         </div>
                         <div
-                        class="game-card-back h-[300px] w-full bg-primary-light py-2 px-4 rounded-lg border-2 border-white flex flex-col items-center justify-center text-center text-white">
-                        <div class="flex justify-between items-center w-full">
-                            <div
-                            class="w-16 h-16 bg-primary-light rounded-lg border-2 border-white flex items-center justify-center mb-4">
-                            <i data-feather="globe" class="w-8 h-8 text-white"></i>
-                        </div>
-                            <span
-                                class="text-sm bg-white rounded-xl text-primary font-bold uppercase p-1">favorito</span>
-                        </div>
-                        <p class="mb-4">
-                            Landing Pages, sites institucionais de até 5 páginas internas, além de sites premium com
+                            class="game-card-back h-[300px] w-full bg-primary-light py-2 px-4 rounded-lg border-2 border-white flex flex-col items-center justify-center text-center text-white">
+                            <div class="flex justify-between items-center w-full">
+                                <div
+                                    class="w-16 h-16 bg-primary-light rounded-lg border-2 border-white flex items-center justify-center mb-4">
+                                    <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                                </div>
+                                <span
+                                    class="text-sm bg-white rounded-xl text-primary font-bold uppercase p-1">favorito</span>
+                            </div>
+                            <p class="mb-4">
+                                Landing Pages, sites institucionais de até 5 páginas internas, além de sites premium com
                                 integrações, podendo conter até 8 páginas internas.
-                        </p>
+                            </p>
+                            <a href=""> <button
+                                    class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">entrar
+                                    em contato</button></a>
 
-                        <span
-                            class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">entrar
-                            em contato</span>
-                    </div>
+                        </div>
                     </div>
                 </div>
 
@@ -530,18 +501,17 @@
                                     class="w-16 h-16 bg-accent rounded-lg border-2 border-dark flex items-center justify-center mb-4">
                                     <i data-feather="bar-chart-2" class="w-8 h-8 text-dark"></i>
                                 </div>
-                                <span
-                                    class="text-sm bg-white rounded-xl text-dark font-bold uppercase p-1">custo
+                                <span class="text-sm bg-white rounded-xl text-dark font-bold uppercase p-1">custo
                                     benefício</span>
                             </div>
                             <p class="mb-4">
                                 Estratégias de campanhas e SEO para aumentar seus números em redes sociais, atraindo
                                 mais clientes para seu negócio.
                             </p>
+                            <a href=""> <button
+                                    class="text-xs font-bold uppercase bg-accent p-2 border-2 border-dark rounded-md btn-cta mt-5">entrar
+                                    em contato</button></a>
 
-                            <span
-                                class="text-xs font-bold uppercase bg-accent p-2 border-2 border-dark rounded-md btn-cta mt-5">entrar
-                                em contato</span>
                         </div>
                     </div>
                 </div>
@@ -567,22 +537,23 @@
                             </div>
                         </div>
                         <div
-                        class="game-card-back h-[300px] w-full bg-primary py-2 px-4 rounded-lg border-2 border-white flex flex-col items-center justify-center text-center text-white">
-                        <div class="flex justify-start items-center w-full">
-                            <div
-                            class="w-16 h-16 bg-primary rounded-lg border-2 border-white flex items-center justify-center mb-4">
-                            <i data-feather="globe" class="w-8 h-8 text-white"></i>
-                        </div>
-                          
-                        </div>
-                        <p class="mb-4">
-                            Edição de vídeos personalizada para aumentar sua presença online e atrair mais clientes. Conteúdos criativos e envolventes, feitos para destacar sua marca.
-                        </p>
+                            class="game-card-back h-[300px] w-full bg-primary py-2 px-4 rounded-lg border-2 border-white flex flex-col items-center justify-center text-center text-white">
+                            <div class="flex justify-start items-center w-full">
+                                <div
+                                    class="w-16 h-16 bg-primary rounded-lg border-2 border-white flex items-center justify-center mb-4">
+                                    <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                                </div>
 
-                        <span
-                            class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">entrar
-                            em contato</span>
-                    </div>
+                            </div>
+                            <p class="mb-4">
+                                Edição de vídeos personalizada para aumentar sua presença online e atrair mais clientes.
+                                Conteúdos criativos e envolventes, feitos para destacar sua marca.
+                            </p>
+                            <a href=""><button
+                                    class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">entrar
+                                    em contato</button></a>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -593,8 +564,7 @@
     <section class="py-20 bg-white" id="portfolio">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase"
-                    data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
                     <span class="text-primary">//</span> Portfólio <span class="text-primary">//</span>
                 </h2>
                 <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -622,8 +592,9 @@
                             <span>Original SP Tattoo</span>
                         </div>
                         <div class="col-span-3">Site Institucional</div>
-                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver mais</span></div>
-          
+                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver
+                                mais</span></div>
+
                     </div>
 
                     <!-- Player 2 -->
@@ -637,7 +608,8 @@
                             <span>Psicologa Nadia Barbosa</span>
                         </div>
                         <div class="col-span-3">Landing Page</div>
-                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver mais</span></div>
+                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver
+                                mais</span></div>
                     </div>
 
                     <!-- Player 3 -->
@@ -650,8 +622,9 @@
                             </div>
                             <span>Original Quiz</span>
                         </div>
-                        <div class="col-span-3">Site preium</div>
-                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver mais</span></div>
+                        <div class="col-span-3">Site premium</div>
+                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver
+                                mais</span></div>
                     </div>
 
                     <!-- Player 4 -->
@@ -665,27 +638,30 @@
                             <span>Edição</span>
                         </div>
                         <div class="col-span-3">Edição profissional</div>
-                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver mais</span></div>
+                        <div class="col-span-3 font-bold"><span class="bg-primary text-white py-1 px-2 rounded-xl">ver
+                                mais</span></div>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-12" data-aos="fade-up">
-                <button
+                <a href="github.com/acrux">
+                    <button
                     class="px-8 py-4 bg-dark text-white font-bold uppercase tracking-wider pixel-border pixel-button hover:bg-dark/90 transition-colors">
-                    Ver Todos os Jogadores
+                    Ver mais projetos
                 </button>
+                </a>
+                
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section with Achievements -->
-    <section class="py-20 bg-light" id="testimonials">
+    <section class="py-20 bg-light" id="depoimentos">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Press Start 2P', cursive;"
-                    data-aos="fade-up">
-                    <span class="text-primary">//</span> CONQUISTAS <span class="text-primary">//</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase" data-aos="fade-up">
+                    <span class="text-primary">//</span> Depoimentos <span class="text-primary">//</span>
                 </h2>
                 <p class="text-lg text-dark max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                     O que nossos jogadores estão dizendo sobre a experiência
@@ -694,87 +670,69 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up">
+                <div class="bg-white p-6 h-64 rounded-lg border-2 border-dark" data-aos="fade-up">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
-                            <img src="http://static.photos/people/200x200/9" alt="Cliente 1"
+                            <img src="http://static.photos/people/200x200/1" alt="Cliente 1"
                                 class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Carlos Silva</h4>
-                            <p class="text-sm text-dark/70">Nível 7 - Site Master</p>
                         </div>
                     </div>
-                    <p class="text-dark mb-6">
-                        "A gamificação tornou todo o processo de desenvolvimento do nosso site muito mais engajador.
-                        Conseguimos resultados incríveis enquanto nos divertíamos!"
+                    <p class="text-dark mb-6 italic">
+                        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit neque eligendi quae mollitia
+                        earum ullam."
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">+60%
-                            VENDAS</span>
-                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">3
-                            CONQUISTAS</span>
-                    </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 h-64  rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
-                            <img src="http://static.photos/people/200x200/10" alt="Cliente 2"
+                            <img src="http://static.photos/people/200x200/2" alt="Cliente 2"
                                 class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Ana Paula</h4>
-                            <p class="text-sm text-dark/70">Nível 5 - Ads Ninja</p>
+
                         </div>
                     </div>
-                    <p class="text-dark mb-6">
-                        "Nunca imaginei que marketing pudesse ser tão divertido! As missões me mantiveram motivada e os
-                        resultados superaram todas as expectativas."
+                    <p class="text-dark mb-6 italic">
+                        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus quaerat eos cumque
+                        aliquid libero. "
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">-30%
-                            CPA</span>
-                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">5 MISSÕES</span>
-                    </div>
+
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white p-6 rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-6 h-64 rounded-lg border-2 border-dark" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-dark mr-4">
-                            <img src="http://static.photos/people/200x200/11" alt="Cliente 3"
+                            <img src="http://static.photos/people/200x200/3" alt="Cliente 3"
                                 class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-bold">Roberto Almeida</h4>
-                            <p class="text-sm text-dark/70">Nível 6 - Growth Hacker</p>
                         </div>
                     </div>
-                    <p class="text-dark mb-6">
-                        "A competição saudável no leaderboard me fez ir além. Em 3 meses já estávamos no topo do ranking
-                        e com os melhores resultados da nossa história!"
+                    <p class="text-dark mb-6 italic">
+                        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos tempora esse
+                        aut qui dolores! "
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">+120%
-                            LEADS</span>
-                        <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">TOP 1</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section with Level Up -->
-    <section class="py-20 bg-primary text-white" id="contact">
+    <section class="py-20 bg-primary text-white" id="contato">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Press Start 2P', cursive;"
-                data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
                 PRONTO PARA O PRÓXIMO NÍVEL?
             </h2>
             <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90" data-aos="fade-up" data-aos-delay="100">
-                Comece sua jornada de marketing gamificado hoje e transforme seus resultados enquanto se diverte!
+                O primeiro passo para transformar sua ideia em realidade   
             </p>
 
             <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-xl border-2 border-white/20 p-8"
@@ -801,9 +759,10 @@
                         <label for="goal" class="block text-left text-white mb-2 font-bold">Objetivo</label>
                         <select id="goal"
                             class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white">
-                            <option class="bg-dark">Site Novo</option>
-                            <option class="bg-dark">Mais Vendas</option>
-                            <option class="bg-dark">Mais Visibilidade</option>
+                            <option class="bg-dark">Landing Page Simples</option>
+                            <option class="bg-dark">Site Completo Institucional</option>
+                            <option class="bg-dark">Site Premium</option>
+                            <option class="bg-dark">Pacote de videos</option>
                             <option class="bg-dark">Outro</option>
                         </select>
                     </div>
@@ -814,19 +773,6 @@
                         </button>
                     </div>
                 </form>
-
-                <div class="mt-8 flex items-center justify-center space-x-4">
-                    <span class="h-px flex-1 bg-white/30"></span>
-                    <span class="text-white/80">OU</span>
-                    <span class="h-px flex-1 bg-white/30"></span>
-                </div>
-
-                <div class="mt-8">
-                    <button
-                        class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-lg hover:bg-white/10 transition-colors flex items-center justify-center mx-auto">
-                        <i data-feather="discord" class="w-5 h-5 mr-2"></i> Entrar no Discord
-                    </button>
-                </div>
             </div>
         </div>
     </section>
@@ -844,7 +790,7 @@
                         <span class="font-bold text-xl" style="font-family: 'Press Start 2P', cursive;">ACRUX</span>
                     </div>
                     <p class="text-white/70 mb-6">
-                        Marketing gamificado para PMEs que querem resultados reais enquanto se divertem.
+                        Sites, SEO e vídeos que fazem sua marca aparecer.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-white/70 hover:text-white transition-colors">
@@ -862,24 +808,23 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg mb-6 uppercase">Missões</h3>
+                    <h3 class="font-bold text-lg mb-6 uppercase">Projetos</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Desenvolvimento de
-                                Sites</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Performance Ads</a>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Original sp tattoo</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Psicologa Nadia Barbosa</a>
                         </li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">SEO & Conteúdo</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Identidade Visual</a>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Original Quiz</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Edição</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg mb-6 uppercase">Jornada</h3>
+                    <h3 class="font-bold text-lg mb-6 uppercase">Site Map</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Leaderboard</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Conquistas</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Missões</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Recompensas</a></li>
+                        <li><a href="#nossaequipe" class="text-white/70 hover:text-white transition-colors">Nossa Equipe</a></li>
+                        <li><a href="#planos" class="text-white/70 hover:text-white transition-colors">Planos</a></li>
+                        <li><a href="#portfolio" class="text-white/70 hover:text-white transition-colors">Portfólio</a></li>
+                        <li><a href="#depoimentos" class="text-white/70 hover:text-white transition-colors">Depoimentos</a></li>
                     </ul>
                 </div>
                 <div>
@@ -902,41 +847,15 @@
             </div>
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-white/50 text-sm mb-4 md:mb-0">
-                    © 2023 Acrux Marketing Gamificado. Todos os direitos reservados.
+                    © 2023 Acrux. Todos os direitos reservados.
                 </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">Termos</a>
-                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">Privacidade</a>
-                    <a href="#" class="text-white/50 hover:text-white/70 text-sm transition-colors">FAQ</a>
-                </div>
+        
             </div>
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        feather.replace();
+    <script type="module" src="src/main.js"></script>
 
-        // Animate progress bars on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const progressBars = document.querySelectorAll('.progress-fill');
-
-            const animateProgressBars = () => {
-                progressBars.forEach(bar => {
-                    const targetWidth = bar.getAttribute('data-width') || '75%';
-                    bar.style.width = targetWidth;
-                });
-            };
-
-            // Run once on page load
-            animateProgressBars();
-
-            // Or use IntersectionObserver to animate when scrolled into view
-        });
-    </script>
 </body>
 
 </html>
