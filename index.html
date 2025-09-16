@@ -11,14 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="dist/css/output.css">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/output.css">
     <style>
-        html{
+         body,  html {
             scroll-behavior: smooth;
-        }
-        body {
             background-color: #F8F7FC;
             color: #0F0A1A;
             font-family: 'Inter', sans-serif;
@@ -272,6 +269,11 @@
                                 </select>
                             </div>
                             <div class="md:col-span-2">
+                                <label for="message" class="block text-left text-white mb-2 font-bold">Mensagem</label>
+                                <textarea id="message" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white 
+                                         focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
                                 <button type="submit"
                                     class="w-full px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider rounded-lg border-2 border-white hover:bg-white/90 transition-colors">
                                     Enviar
@@ -295,9 +297,7 @@
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent rounded-full filter blur-3xl opacity-20 -z-10"></div>
     </section>
 
-    <section class="flex justify-center items-center">
-        sessão de sobre nos aqui
-    </section>
+
     <!-- About Section with Game Characters -->
     <section class="py-20 bg-white" id="nossaequipe">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -436,7 +436,7 @@
                             class="game-card-front h-[300px] w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
                             <div
                                 class="w-16 h-16 bg-primary-light rounded-lg border-2 border-dark flex items-center justify-center mb-4">
-                                <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                                <i class="fa-solid fa-globe text-3xl text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3 uppercase">Sites Profissionais</h3>
                             <p class="text-dark flex-grow">
@@ -446,7 +446,7 @@
 
                             <div class="mt-4 flex justify-end items-center">
                                 <button class="text-primary font-bold flex items-center">
-                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                    Detalhes <i class="fa-solid fa-arrow-right text-primary ml-1 text-xs"></i>
                                 </button>
                             </div>
                         </div>
@@ -455,7 +455,7 @@
                             <div class="flex justify-between items-center w-full">
                                 <div
                                     class="w-16 h-16 bg-primary-light rounded-lg border-2 border-white flex items-center justify-center mb-4">
-                                    <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                                    <i class="fa-solid fa-globe text-4xl text-white"></i>
                                 </div>
                                 <span
                                     class="text-sm bg-white rounded-xl text-primary font-bold uppercase p-1">favorito</span>
@@ -465,8 +465,7 @@
                                 integrações, podendo conter até 8 páginas internas.
                             </p>
                             <a href=""> <button
-                                    class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">entrar
-                                    em contato</button></a>
+                                    class="text-xs font-bold uppercase bg-primary-light p-2 border-2 border-white rounded-md btn-cta mt-5">Enviar</button></a>
 
                         </div>
                     </div>
@@ -479,7 +478,7 @@
                             class="game-card-front h-[300px] w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
                             <div
                                 class="w-16 h-16 bg-accent rounded-lg border-2 border-dark flex items-center justify-center mb-4">
-                                <i data-feather="bar-chart-2" class="w-8 h-8 text-white"></i>
+                                <i class="fa-solid fa-rectangle-ad text-4xl text-black"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3 uppercase">Marketing Digital</h3>
                             <p class="text-dark flex-grow">
@@ -490,7 +489,7 @@
                             <div class="mt-4 flex justify-end items-center">
 
                                 <button class="text-primary font-bold flex items-center">
-                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                    Detalhes <i class="fa-solid fa-arrow-right text-primary ml-1 text-xs"></i>
                                 </button>
                             </div>
                         </div>
@@ -499,7 +498,7 @@
                             <div class="flex justify-between items-center w-full">
                                 <div
                                     class="w-16 h-16 bg-accent rounded-lg border-2 border-dark flex items-center justify-center mb-4">
-                                    <i data-feather="bar-chart-2" class="w-8 h-8 text-dark"></i>
+                                    <i class="fa-solid fa-rectangle-ad text-4xl text-black"></i>
                                 </div>
                                 <span class="text-sm bg-white rounded-xl text-dark font-bold uppercase p-1">custo
                                     benefício</span>
@@ -523,7 +522,7 @@
                             class="game-card-front h-[300px] w-full bg-white p-6 rounded-lg border-2 border-dark flex flex-col">
                             <div
                                 class="w-16 h-16 bg-primary rounded-lg border-2 border-dark flex items-center justify-center mb-4">
-                                <i data-feather="trending-up" class="w-8 h-8 text-white"></i>
+                                <i class="fa-solid fa-photo-film text-4xl text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold mb-3 uppercase">Edição Vídeos/ Imagens</h3>
                             <p class="text-dark flex-grow">
@@ -532,7 +531,7 @@
 
                             <div class="mt-4 flex justify-end items-center">
                                 <button class="text-primary font-bold flex items-center">
-                                    Detalhes <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i>
+                                    Detalhes <i class="fa-solid fa-arrow-right text-primary ml-1 text-xs"></i>
                                 </button>
                             </div>
                         </div>
@@ -541,7 +540,7 @@
                             <div class="flex justify-start items-center w-full">
                                 <div
                                     class="w-16 h-16 bg-primary rounded-lg border-2 border-white flex items-center justify-center mb-4">
-                                    <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                                    <i class="fa-solid fa-photo-film text-4xl text-white"></i>
                                 </div>
 
                             </div>
@@ -647,11 +646,11 @@
             <div class="text-center mt-12" data-aos="fade-up">
                 <a href="github.com/acrux">
                     <button
-                    class="px-8 py-4 bg-dark text-white font-bold uppercase tracking-wider pixel-border pixel-button hover:bg-dark/90 transition-colors">
-                    Ver mais projetos
-                </button>
+                        class="px-8 py-4 bg-dark text-white font-bold uppercase tracking-wider pixel-border pixel-button hover:bg-dark/90 transition-colors">
+                        Ver mais projetos
+                    </button>
                 </a>
-                
+
             </div>
         </div>
     </section>
@@ -732,12 +731,12 @@
                 PRONTO PARA O PRÓXIMO NÍVEL?
             </h2>
             <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90" data-aos="fade-up" data-aos-delay="100">
-                O primeiro passo para transformar sua ideia em realidade   
+                O primeiro passo para transformar sua ideia em realidade
             </p>
 
             <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-xl border-2 border-white/20 p-8"
                 data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-2xl font-bold mb-6">CRIAR CONTA</h3>
+                <h3 class="text-2xl font-bold mb-6 uppercase">entre em contato</h3>
 
                 <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-dark">
                     <div>
@@ -767,9 +766,14 @@
                         </select>
                     </div>
                     <div class="md:col-span-2">
+                        <label for="message" class="block text-left text-white mb-2 font-bold">Mensagem</label>
+                        <textarea id="message" class="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/20 text-white 
+                                 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
                         <button type="submit"
                             class="w-full px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider rounded-lg border-2 border-white hover:bg-white/90 transition-colors">
-                            Começar Jornada
+                            Enviar
                         </button>
                     </div>
                 </form>
@@ -810,8 +814,10 @@
                 <div>
                     <h3 class="font-bold text-lg mb-6 uppercase">Projetos</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Original sp tattoo</a></li>
-                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Psicologa Nadia Barbosa</a>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Original sp tattoo</a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Psicologa Nadia
+                                Barbosa</a>
                         </li>
                         <li><a href="#" class="text-white/70 hover:text-white transition-colors">Original Quiz</a></li>
                         <li><a href="#" class="text-white/70 hover:text-white transition-colors">Edição</a>
@@ -821,10 +827,13 @@
                 <div>
                     <h3 class="font-bold text-lg mb-6 uppercase">Site Map</h3>
                     <ul class="space-y-3">
-                        <li><a href="#nossaequipe" class="text-white/70 hover:text-white transition-colors">Nossa Equipe</a></li>
+                        <li><a href="#nossaequipe" class="text-white/70 hover:text-white transition-colors">Nossa
+                                Equipe</a></li>
                         <li><a href="#planos" class="text-white/70 hover:text-white transition-colors">Planos</a></li>
-                        <li><a href="#portfolio" class="text-white/70 hover:text-white transition-colors">Portfólio</a></li>
-                        <li><a href="#depoimentos" class="text-white/70 hover:text-white transition-colors">Depoimentos</a></li>
+                        <li><a href="#portfolio" class="text-white/70 hover:text-white transition-colors">Portfólio</a>
+                        </li>
+                        <li><a href="#depoimentos"
+                                class="text-white/70 hover:text-white transition-colors">Depoimentos</a></li>
                     </ul>
                 </div>
                 <div>
@@ -849,7 +858,7 @@
                 <p class="text-white/50 text-sm mb-4 md:mb-0">
                     © 2023 Acrux. Todos os direitos reservados.
                 </p>
-        
+
             </div>
         </div>
     </footer>

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite", 
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "tw:dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/output.css --watch",
+    "tw:dev": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/output.css  --watch",
     "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/output.css --minify --content \"./dist/**/*.html\""
   },
   "devDependencies": {
